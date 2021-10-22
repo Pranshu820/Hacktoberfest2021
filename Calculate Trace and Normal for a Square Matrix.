@@ -1,0 +1,45 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int
+main ()
+{
+  // Program to calculate the trace of a matrix, square matrix because trace is not defined for
+  // non square matrixes.
+  /*                         
+     C++ program to calculate the trace of a matrix!
+   */
+  int x;
+  double trace = 0.00;
+  double prenormal = 0.00;
+  double normal;
+  cout <<
+    "Enter the order of the square matrix of which you want to calculate the trace and normal: ";
+  cin >> x;
+  cout <<
+    "\nEnter the corresponding elements, for example, [x][y] means you have to enter the element corresponding to the x th row and y th column!\n\n";
+  double mat[x][x];
+
+  for (int a = 0; a < x; a++)
+    {
+      for (int b = 0; b < x; b++)
+	{
+	  cout << "[" << a + 1 << "]" << "[" << b + 1 << "]: ";
+	  cin >> mat[a][b];
+	  if (a == b)
+	    {
+	      trace += mat[a][b];
+	    }
+	  prenormal += mat[a][b] * mat[a][b];
+	  normal = sqrt (prenormal);
+
+	}
+
+
+    }
+  cout << "\nThe trace of the give matrix is " << trace << " only!\n";
+  cout << "The normal of the given matrix is " << normal << " only!\n";
+
+
+  return 0;
+}
